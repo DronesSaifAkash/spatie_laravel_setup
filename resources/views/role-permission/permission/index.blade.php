@@ -1,7 +1,18 @@
 
 <x-app-layout>
 {{-- @include('role-permission.nav-links') --}}
-
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="icon-list-alt"></i>Manage Permissions</h2>
+                @can('Create Permission')
+                    <a class="btn btn-sm btn-primary" href="{{url('permissions/create')}}">Add Permissions</a>
+                @endcan 
+            </div>
+            <div class="box-content">
+                <br>
+                {{-- starts here --}}
 <div class="container text-white">
     <div class="row">
         <div class="col-md-12">
@@ -12,12 +23,6 @@
             @endif 
 
             <div class="card">
-                <div class="card-header">
-                    <h4>Permissions</h4>
-                    @can('Create Permission')
-                    <a href="{{url('permissions/create')}}">Add Permissions</a>
-                    @endcan 
-                </div>
                 <div class="card-body">
 
                     <table>
@@ -32,10 +37,10 @@
                             <td>{{$permission->name}}</td>
                             <td>
                                 @can('Update Permission')
-                                <a href="{{url('permissions/'.$permission->id.'/edit')}}">Edit</a>
+                                <a class="btn btn-sm btn-primary" href="{{url('permissions/'.$permission->id.'/edit')}}">Edit</a>
                                 @endcan 
                                 @can('Delete Permission')
-                                <a href="{{ url('permissions/'.$permission->id.'/delete')}}">Delete</a>
+                                <a class="btn btn-sm btn-primary" href="{{ url('permissions/'.$permission->id.'/delete')}}">Delete</a>
                                 @endcan 
 
                             </td>
@@ -46,5 +51,12 @@
             </div>
         </div>
     </div>
+</div>
+
+
+  {{-- ends here --}}
+</div>
+</div>
+</div>
 </div>
 </x-app-layout>

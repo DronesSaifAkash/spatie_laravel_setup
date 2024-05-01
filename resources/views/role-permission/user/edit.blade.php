@@ -1,12 +1,20 @@
 <x-app-layout>
+    
+    <div class="row">
+        <div class="box col-md-12">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2><i class="icon-list-alt"></i>Edit User</h2>
+                    <a class="btn btn-sm btn-primary"  href="{{url('users')}}">Back</a>
+                </div>
+                <div class="box-content">
+                    <br>
+                    {{-- starts here --}}
+                    
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <h4>Edit User</h4>
-                    <a href="{{url('users')}}">Back</a>
-                </div>
                 <div class="card-body">
                     <form action="{{url('users/'.$user->id)}}" method="POST">
                         @csrf 
@@ -28,7 +36,7 @@
                         </div> --}}
                         <div class="mb-3">
                             <label for="">Roles</label>
-                            <select name="roles[]" id="" multiple>
+                            <select name="roles[]" id="" multiple class="form-control">
                                 <option value=""> Select Role </option>
                                 @foreach($roles as $role)
                                 <option
@@ -52,5 +60,11 @@
             </div>
         </div>
     </div>
+</div>
+
+  {{-- ends here --}}
+</div>
+</div>
+</div>
 </div>
 </x-app-layout>

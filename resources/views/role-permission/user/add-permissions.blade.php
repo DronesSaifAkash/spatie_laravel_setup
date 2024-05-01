@@ -1,4 +1,15 @@
 <x-app-layout>
+
+    
+    <div class="row">
+        <div class="box col-md-12">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                    <h2><i class="icon-list-alt"></i>Page Add</h2>
+                </div>
+                <div class="box-content">
+                    <br>
+                    {{-- starts here --}}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -51,5 +62,11 @@
             </div>
         </div>
     </div>
+</div>
+
+  {{-- ends here --}}
+</div>
+</div>
+</div>
 </div>
 </x-app-layout>

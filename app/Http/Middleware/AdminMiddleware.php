@@ -22,6 +22,8 @@ class AdminMiddleware
             }
             abort(403, "User does not have correct Role.");
         }
-        abort(401);
+        // abort(403, 'Unauthorized. Please log in.');
+        return redirect()->route('login')->with('error', 'You are not authorized. Please log in.');
+        
     }
 }
